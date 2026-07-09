@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>貓玲的slap battle測試題</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <section class="screen start-screen" id="startScreen">
+        <div class="panel">
+          <p class="kicker">舊群的最後一個身分組</p>
+          <h1>貓玲的slap battle測試題</h1>
+          <p class="note">(只更新到守門人手套前)</p>
+          <button class="primary-button" id="startButton" type="button">開始考試</button>
+        </div>
+      </section>
+
+      <section class="screen quiz-screen hidden" id="quizScreen" aria-live="polite">
+        <div class="quiz-shell">
+          <div class="quiz-topbar">
+            <span id="questionCounter">第 1 / 25 題</span>
+            <div id="timerDisplay" class="timer-display">
+              <svg class="timer-ring" viewBox="0 0 36 36" aria-hidden="true">
+                <circle class="timer-ring-bg" cx="18" cy="18" r="15.9155"/>
+                <circle class="timer-ring-arc" id="timerArc" cx="18" cy="18" r="15.9155"
+                  stroke-dasharray="100 100" stroke-dashoffset="0"/>
+              </svg>
+              <span id="timerCount" class="timer-count">30</span>
+            </div>
+            <span>通過標準：全對</span>
+          </div>
+          <article class="question-panel">
+            <h2 id="questionText"></h2>
+            <div class="options" id="options"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="screen result-screen hidden" id="passScreen">
+        <div class="celebration" aria-hidden="true">
+          <span class="firework firework-one"></span>
+          <span class="firework firework-two"></span>
+          <span class="firework firework-three"></span>
+          <span class="firework firework-four"></span>
+          <span class="firework firework-five"></span>
+          <span class="firework firework-six"></span>
+          <span class="confetti confetti-1"></span>
+          <span class="confetti confetti-2"></span>
+          <span class="confetti confetti-3"></span>
+          <span class="confetti confetti-4"></span>
+          <span class="confetti confetti-5"></span>
+          <span class="confetti confetti-6"></span>
+          <span class="confetti confetti-7"></span>
+          <span class="confetti confetti-8"></span>
+          <span class="confetti confetti-9"></span>
+          <span class="confetti confetti-10"></span>
+          <span class="confetti confetti-11"></span>
+          <span class="confetti confetti-12"></span>
+          <span class="ribbon ribbon-left"></span>
+          <span class="ribbon ribbon-right"></span>
+        </div>
+        <div class="pass-card">
+          <p class="pass-label">通過畫面</p>
+          <h2>恭喜通過</h2>
+          <p>25 題全對，截圖此畫面跟貓玲要身分組吧。</p>
+          <button class="primary-button" id="restartButton" type="button">再考一次</button>
+        </div>
+      </section>
+
+      <section class="screen fail-screen hidden" id="failScreen">
+        <div class="fail-card">
+          <h2>看來你還不熟...</h2>
+          <p>網頁即將自動退出</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="questions-data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
